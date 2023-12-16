@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://bam21kk1efirk"]
+
+[ext_resource type="PackedScene" uid="uid://bt80o0nqyotka" path="res://player/Player.tscn" id="2_nudr7"]
+[ext_resource type="Texture2D" uid="uid://dtyccjmxp4k4" path="res://textures/kenney_pattern-pack-pixel/Tiles (Color)/tile_0000.png" id="2_pskig"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4n3jw"]
+albedo_texture = ExtResource("2_pskig")
+uv1_triplanar = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o2dqr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t477f"]
+
+[sub_resource type="Sky" id="Sky_075vd"]
+sky_material = SubResource("ProceduralSkyMaterial_t477f")
+
+[sub_resource type="Environment" id="Environment_u1vc7"]
+background_mode = 2
+sky = SubResource("Sky_075vd")
+
+[node name="World" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material_override = SubResource("StandardMaterial3D_4n3jw")
+use_collision = true
+size = Vector3(18.5437, 0.103472, 19.0044)
+
+[node name="Player" parent="." instance=ExtResource("2_nudr7")]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Player"]
+transform = Transform3D(-0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, -0.989676, 0, 1.56984, 0)
+shape = SubResource("SphereShape3D_o2dqr")
+spring_length = 3.0
+
+[node name="Camera3D" type="Camera3D" parent="Player/SpringArm3D"]
+transform = Transform3D(0.999796, 0.0195389, 0.00515932, -0.0201593, 0.982122, 0.187161, -0.00141016, -0.187227, 0.982316, 0.087182, 0.812727, 3.12257)
+current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_u1vc7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-1, 0, 0, 0, 0.707107, 0.707107, 0, 0.707107, -0.707107, -2, 3, 0)

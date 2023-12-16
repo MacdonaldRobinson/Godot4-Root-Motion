@@ -1,0 +1,68 @@
+[gd_resource type="AnimationNodeBlendSpace2D" load_steps=14 format=3 uid="uid://cgjd0414nh2pu"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hlpj2"]
+animation = &"character-animations-pack/Neutral Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_apb11"]
+animation = &"character-animations-pack/Walking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oh841"]
+animation = &"character-animations-pack/Jog Backward Left Diagonal"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u8hc3"]
+animation = &"character-animations-pack/Jog Forward Left Diagonal"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j0anu"]
+animation = &"character-animations-pack/Jog Forward Right Diagonal"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t6kcv"]
+animation = &"character-animations-pack/Running Forward"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lt3p4"]
+animation = &"character-animations-pack/Walking Backwards"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i7xwp"]
+animation = &"character-animations-pack/Right Strafe Walking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_owt0j"]
+animation = &"character-animations-pack/Right Strafe Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_07lie"]
+animation = &"character-animations-pack/Left Strafe Walking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cs8pf"]
+animation = &"character-animations-pack/Left Strafe Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w1drc"]
+animation = &"character-animations-pack/Running Backward"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uql5t"]
+animation = &"character-animations-pack/Jog Backward Right Diagonal"
+
+[resource]
+blend_point_0/node = SubResource("AnimationNodeAnimation_hlpj2")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_apb11")
+blend_point_1/pos = Vector2(0, 0.5)
+blend_point_2/node = SubResource("AnimationNodeAnimation_t6kcv")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_lt3p4")
+blend_point_3/pos = Vector2(0, -0.5)
+blend_point_4/node = SubResource("AnimationNodeAnimation_i7xwp")
+blend_point_4/pos = Vector2(0.4, 0)
+blend_point_5/node = SubResource("AnimationNodeAnimation_owt0j")
+blend_point_5/pos = Vector2(1, 0)
+blend_point_6/node = SubResource("AnimationNodeAnimation_07lie")
+blend_point_6/pos = Vector2(-0.4, 0)
+blend_point_7/node = SubResource("AnimationNodeAnimation_cs8pf")
+blend_point_7/pos = Vector2(-1, 0)
+blend_point_8/node = SubResource("AnimationNodeAnimation_w1drc")
+blend_point_8/pos = Vector2(0, -1)
+blend_point_9/node = SubResource("AnimationNodeAnimation_uql5t")
+blend_point_9/pos = Vector2(0.5, -0.5)
+blend_point_10/node = SubResource("AnimationNodeAnimation_oh841")
+blend_point_10/pos = Vector2(-0.5, -0.5)
+blend_point_11/node = SubResource("AnimationNodeAnimation_u8hc3")
+blend_point_11/pos = Vector2(-0.5, 0.5)
+blend_point_12/node = SubResource("AnimationNodeAnimation_j0anu")
+blend_point_12/pos = Vector2(0.5, 0.6)
