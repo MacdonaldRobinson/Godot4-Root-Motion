@@ -6,6 +6,8 @@ const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var current_motion_state:Character.MotionState = Character.MotionState.standing
+
 @onready var character: Character = $Clara as Character
 
 func _physics_process(delta):
@@ -24,8 +26,17 @@ func _physics_process(delta):
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	if character:
-		character.set_motion(Vector2(input_dir.x, -input_dir.y))
+		character.set_motion(current_motion_state, Vector2(input_dir.x, -input_dir.y))
 		velocity = character.animation_tree.get_root_motion_position() / delta
+		
+	if Input.is_action_just_pressed("jump"):
+		character.jump()
+	
+	if Input.is_action_just_pressed("crouch_toggle"):
+		if current_motion_state == Character.MotionState.standing:
+			current_motion_state = Character.MotionState.crouching
+		else:
+			current_motion_state = Character.MotionState.standing
 		
 #	if direction:
 #		velocity.x = direction.x * SPEED

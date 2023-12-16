@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bam21kk1efirk"]
+[gd_scene load_steps=9 format=3 uid="uid://bam21kk1efirk"]
 
+[ext_resource type="Script" path="res://World.gd" id="1_jxrg7"]
 [ext_resource type="PackedScene" uid="uid://bt80o0nqyotka" path="res://player/Player.tscn" id="2_nudr7"]
 [ext_resource type="Texture2D" uid="uid://dtyccjmxp4k4" path="res://textures/kenney_pattern-pack-pixel/Tiles (Color)/tile_0000.png" id="2_pskig"]
 
@@ -19,6 +20,7 @@ background_mode = 2
 sky = SubResource("Sky_075vd")
 
 [node name="World" type="Node3D"]
+script = ExtResource("1_jxrg7")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 material_override = SubResource("StandardMaterial3D_4n3jw")
