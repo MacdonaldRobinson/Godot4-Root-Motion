@@ -13,3 +13,5 @@ Shows how to use Root Motion in the Godot 4 game engine:
 - SPACE BAR to jump in the direction of the motion ( I could not find a left and right jump animation in miximo so I just used forward )
 
 Demo: https://macdonaldrobinson.github.io/Godot4-Root-Motion/exports/html/Root-Motion-Test.html
+
+<img width="1416" height="914" alt="image" src="https://github.com/user-attachments/assets/20f00d46-7ea7-44e6-9778-bc50d73edc93" />
